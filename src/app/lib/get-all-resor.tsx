@@ -1,7 +1,7 @@
 import { getStoryblokApi } from "@storyblok/react";
 import { redirect } from "next/navigation";
 export async function getAllResor() {
-  const language = process.env.STORYBLOCK_LANG || "en";
+  const language = process.env.STORYBLOCK_LANG;
   let sbParams = {
     version: "draft" as const,
     language: language,
