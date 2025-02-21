@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://premierpadeltravel.se
+
+# Sitemaps
+Sitemap: https://premierpadeltravel.se/sitemap.xml
