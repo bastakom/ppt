@@ -49,7 +49,6 @@ interface ContentProps {
 
 export const Packages = ({ paket, resor, lang, settings }: PackagesProps) => {
   const { content } = paket;
-  console.log(paket);
 
   return (
     <div>
@@ -89,7 +88,7 @@ export const Packages = ({ paket, resor, lang, settings }: PackagesProps) => {
           <h2 className="text-center lg:text-start pb-4">
             {settings.travel_title}
           </h2>
-          <div className="lg:grid grid-cols-4 gap-4">
+          <div className="md:grid-cols-2 md:grid lg:grid-cols-4 gap-4">
             {resor
               .filter((item: any) =>
                 item.content.category.includes("populara-resor")

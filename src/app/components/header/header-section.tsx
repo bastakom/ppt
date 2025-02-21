@@ -24,12 +24,12 @@ const HeaderSection = (props: any) => {
 
   return (
     <nav className="flex  items-center bg-white border-gray-200 px-4">
-      <div className="grid grid-cols-3 flex-nowrap lg:flex  items-center justify-between pb-4 pt-4 lg:pt-0 mx-auto gap-10 lg:py-4 justify-self-end justify-items-center lg:w-[100%]">
+      <div className="grid grid-cols-3 flex-nowrap lg:flex  items-center justify-between pb-4 pt-4 lg:pt-0 mx-auto gap-10 lg:py-4 justify-self-end justify-items-center md:w-[100%]">
         {/* Hamburgermeny-knapp */}
         <button
           data-collapse-toggle="navbar-search"
           type="button"
-          className="inline-flex items-center p-2  h-16 justify-center text-sm rounded-lg md:hidden focus:outline-none order-3 w-auto"
+          className="inline-flex items-center p-2  h-16 justify-center text-sm rounded-lg lg:hidden focus:outline-none order-3 w-auto"
           aria-controls="navbar-search"
           aria-expanded={isMenuOpen ? "true" : "false"}
           onClick={toggleMenu}
@@ -54,11 +54,11 @@ const HeaderSection = (props: any) => {
 
         {/* Menu for larger screens */}
         <div
-          className="flex items-center w-full justify-between md:justify-center lg:gap-[1.5rem]"
+          className="flex items-center w-full justify-between lg:justify-center lg:gap-[1.5rem]"
           id="navbar-default"
         >
           {/* Första menyn */}
-          <ul className="hidden md:flex md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white lg:gap-[1rem]">
+          <ul className="hidden lg:flex md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white lg:gap-[1rem]">
             {firstMenuItems.map((element: any, i: number) => (
               <li key={i}>
                 {
@@ -90,7 +90,7 @@ const HeaderSection = (props: any) => {
           </LinkBtn>
 
           {/* Andra menyn */}
-          <ul className="hidden md:flex md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white lg:gap-[1.5rem]">
+          <ul className="hidden lg:flex md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white lg:gap-[1.5rem]">
             {secondMenuItems.map((element: any, i: number) => (
               <li key={i}>
                 <LinkBtn

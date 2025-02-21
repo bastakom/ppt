@@ -56,7 +56,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
         {blok.title}
       </h2>
       {blok.show_filter && (
-        <div className="flex flex-col lg:flex-row justify-center lg:gap-4">
+        <div className="flex flex-col md:flex-row justify-center md:gap-4">
           <button
             className={
               filter === "alla"
@@ -97,7 +97,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
       <div className="w-[100%] flex justify-center text-center mt-4 lg:mt-8 text-[14px] leading-[22px]">
         {filteredContent.map((el: any) => {
           return (
-            <div className="w-[90%] lg:w-[40%]" key={uuidv4()}>
+            <div className="w-[90%] md:w-[70%] lg:w-[40%]" key={uuidv4()}>
               {el.content}
             </div>
           );
@@ -119,7 +119,9 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
               </div>
               <div
                 className={`w-[90%] mx-auto grid grid-cols-1 gap-6 mt-4 ${
-                  blok.smaller_cards ? "lg:grid-cols-4" : "lg:grid-cols-3"
+                  blok.smaller_cards
+                    ? "md:grid-cols-2 lg:grid-cols-4"
+                    : "md:grid-cols-2  lg:grid-cols-3"
                 } `}
               >
                 {resor

@@ -36,7 +36,7 @@ export const TripsCard = ({ item, boolean }: TripsCardProps) => {
               } overflow-hidden`}
             >
               {item.content.show_overlay_text && !boolean && (
-                <div className="relative top-[8%] w-[36vw] right-[8%] lg:top-[10%] lg:right-[7%] z-10 bg-[linear-gradient(220deg,_#f15c22_14%,_#f15c22_30%,_#e95326_50%,_#d33b30_82%,_#c33_91%)] lg:w-[10vw] h-[4vh] -rotate-[45deg] text-white flex items-center justify-center uppercase text-[10px]">
+                <div className="relative top-[8%] w-[36vw] right-[8%] lg:top-[10%] md:top-[10%] md:right-[27%] lg:right-[7%] z-10 bg-[linear-gradient(220deg,_#f15c22_14%,_#f15c22_30%,_#e95326_50%,_#d33b30_82%,_#c33_91%)] lg:w-[10vw] h-[4vh] -rotate-[45deg] text-white flex items-center justify-center uppercase text-[10px]">
                   {item.content.overlay_text}
                 </div>
               )}

@@ -23,7 +23,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
   const paket = await getResor(pathname);
   const settings = await getData();
   const resor = await getAllResor();
-  const lang = process.env.STORYBLOCK_LANG || "en";
+  const lang = process.env.STORYBLOCK_LANG;
 
   return (
     <div>

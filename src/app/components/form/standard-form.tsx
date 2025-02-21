@@ -58,7 +58,7 @@ export const StandardForm = ({ settings }: SettingsProps) => {
   };
 
   return (
-    <div className="lg:w-[55%] p-4">
+    <div className="md:w-[90%] lg:w-[55%] p-4">
       {settings && (
         <>
           <h2 className="text-center">{settings.title_flexible_trips}</h2>

@@ -12,7 +12,7 @@ export const NewsLetterForm = ({ settings, lang }: any) => {
   };
 
   const language: Language = lang;
-  const placeholderText = placeholders[language] || placeholders.en;
+  const placeholderText = placeholders[language] || placeholders.sv;
 
   const [email, setEmail] = useState("");
 
