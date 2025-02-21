@@ -27,7 +27,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const resor = await getAllResor();
   const settings = await getData();
 
-  const lang = process.env.STORYBLOCK_LANG || "en";
+  const lang = process.env.STORYBLOCK_LANG;
 
   if (!story.data) {
     return <div>Error fetching story data. Please try again later.</div>;

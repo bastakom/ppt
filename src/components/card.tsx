@@ -28,7 +28,7 @@ export const Card = ({ content }: ContentProps) => {
   return (
     <div className={`${content.card ? "lg:-mb-16" : "hidden"} `}>
       {content.content && (
-        <div className="w-[90%] ml-4 -mb-6 lg:w-[90%] lg:ml-12 lg:mb-0 ">
+        <div className="w-[90%] md:w-[100%] ml-4 -mb-6 lg:w-[90%] lg:ml-12 lg:mb-0 ">
           {render(content.content)}
         </div>
       )}

@@ -124,7 +124,7 @@ export const BookingForm = ({ settings }: any) => {
             placeholder={departure}
             value={formData.departureDate}
             onChange={handleInputChange}
-            className="w-[150px] h-[60px] lg:w-[100%]"
+            className="w-[150px] h-[60px] md:w-[100%]"
           />
           <input
             type="datetime-local"
@@ -133,7 +133,7 @@ export const BookingForm = ({ settings }: any) => {
             placeholder={arrival}
             value={formData.arrivalDate}
             onChange={handleInputChange}
-            className="w-[150px] h-[60px] lg:w-[100%]"
+            className="w-[150px] h-[60px] md:w-[100%]"
           />
         </div>
       )}

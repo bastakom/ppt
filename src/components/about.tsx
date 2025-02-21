@@ -31,7 +31,7 @@ export const About = ({ blok, settings }: AboutProps) => {
     <div
       className={`
       ${styling_left ? "wrapper-left" : "wrapper"}
-      ${form && "bg-[#f8f8f8] lg:!p-10"}
+      ${form && "bg-[#f8f8f8] md:!p-16"}
       ${no_spacing && "no-spacing"}
     `}
       {...storyblokEditable(blok)}
@@ -39,11 +39,13 @@ export const About = ({ blok, settings }: AboutProps) => {
       <h2 className="ordinary-heading pb-2 text-center lg:text-start">
         {Heading}
       </h2>
-      <div className="lg:flex justify-between">
-        <div className="paragraph">{render(content)}</div>
-        <div className="flex flex-col">
-          <div className="citat">{render(citat)}</div>
-          <div className="text-14px italic lg:ml-10 lg:text-start pt-2 text-center">
+      <div className="md:flex md:justify-center lg:justify-between">
+        <div className="paragraph md:text-center lg:text-start">
+          {render(content)}
+        </div>
+        <div className="flex flex-col md:hidden lg:flex">
+          <div className="citat ">{render(citat)}</div>
+          <div className="text-14px italic  lg:ml-10 lg:text-start pt-2 text-center">
             {citat_person}
           </div>
         </div>

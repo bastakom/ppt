@@ -52,7 +52,10 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
   };
 
   return (
-    <form className="mt-10 lg:w-[50%]" onSubmit={handleSubmit}>
+    <form
+      className="mt-10 md:w-[90%] lg:w-[50%] mx-auto"
+      onSubmit={handleSubmit}
+    >
       <div className="grid grid-cols-2 gap-4">
         <input
           type="text"

@@ -19,7 +19,7 @@ storyblokInit({
     image_section: ImageSection,
     terms: TravelTerms,
     partners: LogoBlock,
-    test_filter: Filter,
+    filter: Filter,
     tabel: Tabel,
     contact_form: ContactForm,
   },
