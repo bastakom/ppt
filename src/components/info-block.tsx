@@ -39,7 +39,7 @@ export const InfoBlock = ({ paket, lang }: InfoBlock) => {
               <div
                 className={`${
                   open == el._uid
-                    ? "md:flex flex-col items-center lg:gap-8 lg:mt-4 lg:mb-4 w-[90%] lg:w-[70%]"
+                    ? "md:flex flex-col items-center lg:gap-8 lg:mt-4 lg:mb-4 w-[110%]  lg:w-[70%]"
                     : "hidden"
                 }`}
               >
