@@ -39,14 +39,14 @@ export const NewsLetterForm = ({ settings, lang }: any) => {
 
       <div
         id="mc_embed_signup"
-        className="w-full flex justify-center mt-16 mb-16 lg:mb-6"
+        className="w-full flex justify-center mt-6 mb-6 md:mt-16 md:mb-16 lg:mb-6"
       >
         <form
           action="https://wptpadel.us13.list-manage.com/subscribe/post?u=6aa9cfbc3d8900a7eb5546b9f&amp;id=e260c3901c&amp;f_id=005f7fe9f0"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
-          className="validate bg-[#004E70] py-10 lg:w-[60%] lg:h-[30%] p-4 lg:p-10 flex flex-col gap-4 rounded lg:mb-10"
+          className="validate bg-[#004E70] py-10 lg:w-[60%] lg:h-[30%] p-4 lg:p-10 flex flex-col gap-4 rounded lg:mb-10 md:w-[100%]"
           target="_blank"
           onSubmit={handleSubscribe}
         >

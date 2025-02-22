@@ -124,7 +124,7 @@ const HeaderSection = (props: any) => {
                   <li key={i} className={"mb-[20px] "} onClick={toggleMenu}>
                     <LinkBtn
                       className={"font-semibold mb-[20px] text-[36px]"}
-                      link={`${element.link?.cached_url.replace(
+                      link={`/${element.link?.cached_url.replace(
                         /^\/(da|en)\//,
                         "/"
                       )}`}
@@ -136,7 +136,7 @@ const HeaderSection = (props: any) => {
                   <li key={i} className={"mb-[20px]"} onClick={toggleMenu}>
                     <LinkBtn
                       className={"font-semibold text-[36px]"}
-                      link={`${element.link?.cached_url.replace(
+                      link={`/${element.link?.cached_url.replace(
                         /^\/(da|en)\//,
                         "/"
                       )}`}

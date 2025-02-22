@@ -33,7 +33,7 @@ export const ImageSection = ({ blok }: ImageSectionProps) => {
         <div className="flex gap-[5px] items-center">
           <div className="paragraph">{render(content)}</div>
         </div>
-        <div className="md:mt-6 ">
+        <div className="mt-2 md:mt-6 ">
           {show_link && (
             <LinkBtn
               className="button"

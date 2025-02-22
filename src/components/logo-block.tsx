@@ -26,11 +26,14 @@ export const LogoBlock = ({ blok, settings, lang }: LogoBlock) => {
   return (
     <div className="mt-20">
       <NewsLetterForm settings={settings} lang={lang} />
-      <h2 className="text-center mt-20">{title}</h2>
-      <div className="flex justify-center items-center gap-4 px-4 lg:px-0 lg:mb-20">
+      <h2 className="text-center mt-20 lg:mt-12">{title}</h2>
+      <div className="flex justify-center items-center gap-2 md:gap-4 px-4 lg:px-0 md:mb-16 lg:mb-20">
         {logo_block.map((el: Element) => {
           return (
-            <div key={el.img.filename} className="relative w-[250px] h-[140px]">
+            <div
+              key={el.img.filename}
+              className="relative w-[250px] h-[140px] mb-6 md:mb-0"
+            >
               <Image
                 src={el.img.filename}
                 layout="fill"

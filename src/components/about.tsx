@@ -31,7 +31,7 @@ export const About = ({ blok, settings }: AboutProps) => {
     <div
       className={`
       ${styling_left ? "wrapper-left" : "wrapper"}
-      ${form && "bg-[#f8f8f8] md:!p-16"}
+      ${form && "bg-[#f8f8f8] p-10 md:!p-16"}
       ${no_spacing && "no-spacing"}
     `}
       {...storyblokEditable(blok)}
@@ -39,7 +39,7 @@ export const About = ({ blok, settings }: AboutProps) => {
       <h2 className="ordinary-heading pb-2 text-center lg:text-start">
         {Heading}
       </h2>
-      <div className="md:flex md:justify-center lg:justify-between">
+      <div className="md:flex md:justify-center lg:justify-between md:pb-8 lg:pb-0">
         <div className="paragraph md:text-center lg:text-start">
           {render(content)}
         </div>

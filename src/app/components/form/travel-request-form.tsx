@@ -53,7 +53,7 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
 
   return (
     <form
-      className="mt-10 md:w-[90%] lg:w-[50%] mx-auto"
+      className="mt-4 md:mt-10 md:w-[90%] lg:w-[50%] mx-auto"
       onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-2 gap-4">
@@ -117,7 +117,7 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
         <div>{settings.policy_text}</div>
       </div>
       <button
-        className="w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
+        className="mb-6 md:mb-0 w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
         type="submit"
       >
         {settings.button}

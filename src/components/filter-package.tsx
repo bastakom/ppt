@@ -51,7 +51,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
   });
 
   return (
-    <div className={`${blok.smaller_cards ? "lg:mt-14" : "lg:mt-20"}`}>
+    <div className={`${blok.smaller_cards ? "-mt-4" : "lg:mt-20"}`}>
       <h2 className="ordinary-heading text-center mt-10 mb-4 lg:mt-0">
         {blok.title}
       </h2>
@@ -94,7 +94,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
           )}
         </div>
       )}
-      <div className="w-[100%] flex justify-center text-center mt-4 lg:mt-8 text-[14px] leading-[22px]">
+      <div className="w-[100%] flex justify-center text-center mt-4 lg:mt-8 text-[14px] leading-[22px] mb-8">
         {filteredContent.map((el: any) => {
           return (
             <div className="w-[90%] md:w-[70%] lg:w-[40%]" key={uuidv4()}>
@@ -111,7 +111,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
               className={`${
                 el.section_title == ""
                   ? "invisible"
-                  : "card-container visible mb-10 lg:mb-20"
+                  : "card-container visible mb-10 lg:mb-20 mx-auto"
               }`}
             >
               <div className="w-[90%] mx-auto">
@@ -150,7 +150,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
       {filteredForm.map((el: any) => {
         return (
           <div
-            className="flex justify-center mb-20 lg:mb-0 lg:mt-10"
+            className="flex justify-center mb-20 lg:mb-0 lg:mt-4"
             key={uuidv4()}
           >
             <StandardForm settings={settings} />

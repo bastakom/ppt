@@ -28,14 +28,14 @@ export const Card = ({ content }: ContentProps) => {
   return (
     <div className={`${content.card ? "lg:-mb-16" : "hidden"} `}>
       {content.content && (
-        <div className="w-[90%] md:w-[100%] ml-4 -mb-6 lg:w-[90%] lg:ml-12 lg:mb-0 ">
+        <div className="w-[90%] ml-4 -mb-6 lg:w-[90%] md:ml-12 lg:mb-0 ">
           {render(content.content)}
         </div>
       )}
       <div
         className={`${
           content.card?.length > 0
-            ? "flex flex-col justify-center items-center gap-10 mb-8 mt-4 lg:mt-0"
+            ? "flex flex-col justify-center items-center gap-10 mb-8 mt-4 lg:mt-0 "
             : "invisible"
         }`}
       >
@@ -46,11 +46,13 @@ export const Card = ({ content }: ContentProps) => {
           return (
             <div
               key={el.title}
-              className={`lg:flex flex-row gap-4 bg-white rounded shadow-lg ${
-                openStates[index] ? "lg:h-[65vh]" : "lg:h-[52vh] w-[90%]"
+              className={`md:flex flex-row gap-4 bg-white rounded shadow-lg ${
+                openStates[index]
+                  ? "lg:h-[65vh] w-[90%] md:w-[84vw] lg:w-[53vw]"
+                  : "h-[65vh] md:h-[52vh] w-[90%] md:w-[84vw] lg:w-[53vw]"
               }`}
             >
-              <div className="lg:w-[50%]">
+              <div className="md:min-w-[42vw] md:max-w-[42vw] lg:min-w-[50%] lg:max-w-[50%] h-[30vh] md:h-auto">
                 <Image
                   src={el.img.filename}
                   alt={el.img.alt}
