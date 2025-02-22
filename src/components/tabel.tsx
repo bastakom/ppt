@@ -20,7 +20,11 @@ export const Tabel = ({ tabel, lang }: TabelProps) => {
   };
 
   return (
-    <div className={`${tabel?.tabel?.length > 0 ? " mb-10" : "hidden"}`}>
+    <div
+      className={`${
+        tabel?.tabel?.length > 0 ? " mb-10 w-[90%] mx-auto" : "hidden"
+      }`}
+    >
       <div className="mb-4 font-bold">{tabel.subtitle}</div>
       <div>
         <div>
