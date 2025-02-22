@@ -32,7 +32,7 @@ export const Gallery = ({ images, content }: GalleryProps) => {
             return (
               <div
                 key={index}
-                className="relative !w-[85vw] mb-4 lg:mb-0 md:!w-[42vw] lg:!w-[20.6vw] h-[50vh] group"
+                className="relative !w-[85vw] mb-4 md:mb-0 md:!w-[42vw] lg:!w-[20.6vw] h-[50vh] group"
               >
                 <Image
                   src={el.img.filename}

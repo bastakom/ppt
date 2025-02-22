@@ -51,12 +51,12 @@ export const PackageImageBlock = ({ el }: PackageImageBlockProps) => {
           {el.video ? (
             <video
               controls
-              className="w-[100%] lg:w-[90.2%] h-full lg:max-h-[450px] object-cover"
+              className="w-[90%] mx-auto lg:w-[52.5vw] h-full lg:max-h-[450px] object-cover"
             >
               <source src={el?.image?.filename} type="video/mp4" />
             </video>
           ) : el?.image?.filename ? (
-            <div className="relative w-[90%] md:w-[100%] mx-auto lg:w-[52.5vw] h-[300px] md:h-[450px]">
+            <div className="relative w-[90%]  mx-auto lg:w-[52.5vw] h-[300px] md:h-[450px]">
               <Image
                 src={el?.image?.filename}
                 fill
@@ -66,7 +66,7 @@ export const PackageImageBlock = ({ el }: PackageImageBlockProps) => {
             </div>
           ) : null}
 
-          <div className="text-[14px] w-[90%] md:w-[100%] mx-auto lg:mt-0  lg:max-w-[89.8%]">
+          <div className="text-[14px] w-[90%] lg:w-[52.5vw] mx-auto lg:mt-0 ">
             <div className="package-container">{render(el.content)}</div>
             {readMore && (
               <div className="mt-4">{render(el.dropdown_content)}</div>
@@ -96,17 +96,17 @@ export const PackageImageBlock = ({ el }: PackageImageBlockProps) => {
 
       {el?.second_image?.filename ? (
         <div
-          className={`lg:flex w-[90%] md:w-[100%] lg:w-[100%] mx-auto  lg:flex-col flex-row items-center gap-6 grid grid-cols-1`}
+          className={`lg:flex w-[90%]  lg:w-[100%] mx-auto  lg:flex-col flex-row items-center gap-6 grid grid-cols-1`}
         >
           {el.video ? (
             <video
               controls
-              className="w-[100%] lg:w-[90.4%] h-full lg:max-h-[450px] object-cover"
+              className="w-[100%] lg:w-[52.5vw] h-full lg:max-h-[450px] object-cover"
             >
               <source src={el?.second_image?.filename} type="video/mp4" />
             </video>
           ) : (
-            <div className="relative lg:w-[52.8vw] md:w-[100%] h-[300px] md:h-[450px]">
+            <div className="relative lg:w-[52.8vw]  h-[300px] md:h-[450px]">
               <div>
                 <Image
                   src={el?.second_image?.filename}
@@ -117,7 +117,7 @@ export const PackageImageBlock = ({ el }: PackageImageBlockProps) => {
               </div>
             </div>
           )}
-          <div className="w-[100%] lg:max-w-[89.8%]">
+          <div className="w-[100%] lg:w-[90%]">
             <h3 className="font-semibold text-[14px]">{el.subtitle}</h3>
             <div>{render(el.second_content)}</div>
           </div>
@@ -136,7 +136,7 @@ export const PackageImageBlock = ({ el }: PackageImageBlockProps) => {
             </div>
           </div>
 
-          <div className="lg:max-w-[89.8%] mt-6 lg:mt-0">
+          <div className="lg:max-w-[89.8%] mt-6 lg:mt-0 w-[90%] mx-auto">
             <div>{render(el.third_content)}</div>
           </div>
         </div>

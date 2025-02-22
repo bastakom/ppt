@@ -234,12 +234,17 @@ td {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 
   p {
     text-align: center;
   }
+}
+
+.wrapper:nth-of-type(2) {
+  margin-top: 3rem;
 }
 
 .wrapper-left {
@@ -377,6 +382,12 @@ td {
     flex-direction: row;
   }
 
+  .paragraph {
+    a {
+      font-size: 24px;
+    }
+  }
+
   .imgSectionWrapper {
     width: 90%;
     padding-bottom: 1rem;
@@ -507,11 +518,18 @@ td {
   }
 
   .wrapper {
-    padding: 4rem;
-
+    padding: 5rem;
+    margin-top: 3rem;
     align-items: center;
   }
 
+  .wrapper:nth-of-type(2) {
+    margin-top: 2rem;
+  }
+
+  .no-spacing:nth-of-type(2) {
+    margin-top: 4rem;
+  }
   .socialMediaWrapper {
     width: 11%;
   }
@@ -585,7 +603,9 @@ td {
     margin-bottom: 0rem;
   }
 
-  .card-container:nth-of-type(2) {
-    margin-top: 2rem;
+  .paragraph {
+    a {
+      font-size: 14px;
+    }
   }
 }
