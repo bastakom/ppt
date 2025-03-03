@@ -39,6 +39,7 @@ interface ContentProps {
     contact_title: string;
     contact_content: React.ReactNode[];
     gallery: string[];
+    image_gallery: string[];
     date_title: string;
     position_title: string;
     price_title: string;
@@ -77,9 +78,7 @@ export const Packages = ({ paket, resor, lang, settings }: PackagesProps) => {
         </h2>
         <InfoBlock paket={content.info_block} lang={lang} />
 
-        {content.gallery.length > 0 && (
-          <Gallery images={content.gallery} content={content} />
-        )}
+        {content?.image_gallery?.length > 0 && <Gallery content={content} />}
 
         <div className="flex flex-col gap-4 mt-16">
           {content.card && <Card content={content.card} />}
