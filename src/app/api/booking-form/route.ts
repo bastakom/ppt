@@ -34,7 +34,7 @@ export async function POST(req: Request) {
   try {
     const { data, error } = await resend.emails.send({
       from: "Notifikation: Bokningsförfrågan <onboarding@resend.dev>",
-      to: ["andrea@bastakompisar.se"],
+      to: ["olli@opproductions.se"],
       subject: "Meddelande",
       html: messageBody,
     });
