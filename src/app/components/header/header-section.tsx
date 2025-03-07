@@ -5,10 +5,16 @@ import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-const HeaderSection = (props: any) => {
+interface HeaderProps {
+  props: any;
+  lang: any;
+}
+
+const HeaderSection = ({ props, lang }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLangChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
     const selectedLang = e.target.value;
     window.location.replace(selectedLang);
   };
@@ -17,7 +23,7 @@ const HeaderSection = (props: any) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const { logo, header_menu, logoLink } = props.props.content;
+  const { logo, header_menu, logoLink } = props.content;
 
   const firstMenuItems = header_menu.slice(0, 3);
   const secondMenuItems = header_menu.slice(3, 5);
@@ -155,10 +161,26 @@ const HeaderSection = (props: any) => {
               id="language-select"
               onChange={handleLangChange}
               className="block py-2.5 px-0 w-full lg:text-lg text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+              defaultValue=""
             >
-              <option value="https://premierpadeltravel.se">Svenska</option>
-              <option value="https://premierpadeltravel.dk">Danska</option>
-              <option value="https://premierpadeltravel.com">Engelska</option>
+              <option value="" disabled>
+                {lang === "en"
+                  ? "Engelska"
+                  : lang === "da"
+                  ? "Danska"
+                  : "Svenska"}
+              </option>
+              {lang !== "" && (
+                <option value="https://premierpadeltravel.se">Svenska</option>
+              )}
+
+              {lang !== "da" && (
+                <option value="https://premierpadeltravel.dk">Danska</option>
+              )}
+
+              {lang !== "en" && (
+                <option value="https://premierpadeltravel.com">Engelska</option>
+              )}
             </select>
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none lg:text-2xl">
               <MdKeyboardArrowDown />
