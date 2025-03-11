@@ -1,4 +1,5 @@
 import useStore from "@/components/lib/store";
+import { PopUpModal } from "@/components/ui/pop-up-modal";
 import { useState } from "react";
 
 export const BookingForm = ({ settings }: any) => {
@@ -17,6 +18,7 @@ export const BookingForm = ({ settings }: any) => {
   });
 
   const [isChecked, setIsChecked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -62,6 +64,7 @@ export const BookingForm = ({ settings }: any) => {
           arrivalDate: "",
         });
         setIsChecked(false);
+        setIsModalOpen(true);
       }
     } catch {
       throw new Error("failed");
@@ -99,152 +102,156 @@ export const BookingForm = ({ settings }: any) => {
     arrival,
   } = settings;
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>{title}</h2>
+    <>
+      {isModalOpen && <PopUpModal />}
 
-      <div>{subtitle}</div>
+      <form onSubmit={handleSubmit}>
+        <h2>{title}</h2>
 
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder={name}
-        value={formData.name}
-        onChange={handleInputChange}
-        required
-        className="w-full"
-      />
+        <div>{subtitle}</div>
 
-      {openCalender && (
-        <div className="grid grid-cols-2 gap-4 w-[100%] m-auto ">
-          <input
-            type="datetime-local"
-            name="departureDate"
-            id=""
-            placeholder={departure}
-            value={formData.departureDate}
-            onChange={handleInputChange}
-            className="w-[150px] h-[60px] md:w-[100%]"
-          />
-          <input
-            type="datetime-local"
-            name="arrivalDate"
-            id=""
-            placeholder={arrival}
-            value={formData.arrivalDate}
-            onChange={handleInputChange}
-            className="w-[150px] h-[60px] md:w-[100%]"
-          />
-        </div>
-      )}
-
-      <div className="grid grid-cols-2 gap-4">
         <input
           type="text"
-          name="email"
-          id="email"
-          placeholder={email}
-          value={formData.email}
+          name="name"
+          id="name"
+          placeholder={name}
+          value={formData.name}
           onChange={handleInputChange}
           required
+          className="w-full"
         />
-        <input
-          type="number"
-          name="number"
-          id="number"
-          placeholder={phone}
-          value={formData.number}
+
+        {openCalender && (
+          <div className="grid grid-cols-2 gap-4 w-[100%] m-auto ">
+            <input
+              type="datetime-local"
+              name="departureDate"
+              id=""
+              placeholder={departure}
+              value={formData.departureDate}
+              onChange={handleInputChange}
+              className="w-[150px] h-[60px] md:w-[100%]"
+            />
+            <input
+              type="datetime-local"
+              name="arrivalDate"
+              id=""
+              placeholder={arrival}
+              value={formData.arrivalDate}
+              onChange={handleInputChange}
+              className="w-[150px] h-[60px] md:w-[100%]"
+            />
+          </div>
+        )}
+
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder={email}
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="number"
+            name="number"
+            id="number"
+            placeholder={phone}
+            value={formData.number}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <select
+            name="customerType"
+            id=""
+            value={formData.customerType}
+            onChange={handleSelectChange}
+          >
+            <option value="" disabled>
+              {select_customer_type}
+            </option>
+            <option value="Privatperson">{private_person}</option>
+            <option value="Företag">{business}</option>
+          </select>
+          <select
+            name="numberOfPeople"
+            id=""
+            value={formData.numberOfPeople}
+            onChange={handleSelectChange}
+          >
+            <option value="" disabled>
+              {select_number_of_people}
+            </option>
+            <option value="2">{people_2}</option>
+            <option value="4">{people_4}</option>
+            <option value="8">{people_8}</option>
+            <option value="12">{people_12}</option>
+          </select>
+        </div>
+
+        <textarea
+          name="message"
+          id="message"
+          placeholder={message}
+          className="resize-none h-[20vh] lg:h-[10vh]"
+          value={formData.message}
           onChange={handleInputChange}
-        />
-      </div>
+        ></textarea>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <select
-          name="customerType"
+          name="level"
           id=""
-          value={formData.customerType}
+          value={formData.level}
           onChange={handleSelectChange}
         >
           <option value="" disabled>
-            {select_customer_type}
+            {select_player_level}
           </option>
-          <option value="Privatperson">{private_person}</option>
-          <option value="Företag">{business}</option>
+          <option value="Nybörjare">{level_beginner}</option>
+          <option value="Amatör">{level_amatuer}</option>
+          <option value="Motion">{level_hobby}</option>
+          <option value="Motion plus">{level_hobby_plus}</option>
+          <option value="Medel">{level_intermediate}</option>
+          <option value="Anvancerad">{level_advanced}</option>
         </select>
+
         <select
-          name="numberOfPeople"
+          name="gender"
           id=""
-          value={formData.numberOfPeople}
+          value={formData.gender}
           onChange={handleSelectChange}
         >
           <option value="" disabled>
-            {select_number_of_people}
+            {gender}
           </option>
-          <option value="2">{people_2}</option>
-          <option value="4">{people_4}</option>
-          <option value="8">{people_8}</option>
-          <option value="12">{people_12}</option>
+          <option value="Man">{gender_men}</option>
+          <option value="Kvinna">{gender_female}</option>
+          <option value="Okänd">{gender_optional}</option>
         </select>
-      </div>
 
-      <textarea
-        name="message"
-        id="message"
-        placeholder={message}
-        className="resize-none h-[20vh] lg:h-[10vh]"
-        value={formData.message}
-        onChange={handleInputChange}
-      ></textarea>
+        <div className="flex items-start gap-4">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id=""
+            className="mt-2"
+            checked={isChecked}
+            onChange={handleCheckBox}
+          />
+          <div>{policy_text}</div>
+        </div>
 
-      <select
-        name="level"
-        id=""
-        value={formData.level}
-        onChange={handleSelectChange}
-      >
-        <option value="" disabled>
-          {select_player_level}
-        </option>
-        <option value="Nybörjare">{level_beginner}</option>
-        <option value="Amatör">{level_amatuer}</option>
-        <option value="Motion">{level_hobby}</option>
-        <option value="Motion plus">{level_hobby_plus}</option>
-        <option value="Medel">{level_intermediate}</option>
-        <option value="Anvancerad">{level_advanced}</option>
-      </select>
-
-      <select
-        name="gender"
-        id=""
-        value={formData.gender}
-        onChange={handleSelectChange}
-      >
-        <option value="" disabled>
-          {gender}
-        </option>
-        <option value="Man">{gender_men}</option>
-        <option value="Kvinna">{gender_female}</option>
-        <option value="Okänd">{gender_optional}</option>
-      </select>
-
-      <div className="flex items-start gap-4">
-        <input
-          type="checkbox"
-          name="checkbox"
-          id=""
-          className="mt-2"
-          checked={isChecked}
-          onChange={handleCheckBox}
-        />
-        <div>{policy_text}</div>
-      </div>
-
-      <button
-        className="w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
-        type="submit"
-      >
-        {button}
-      </button>
-    </form>
+        <button
+          className="w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
+          type="submit"
+        >
+          {button}
+        </button>
+      </form>
+    </>
   );
 };

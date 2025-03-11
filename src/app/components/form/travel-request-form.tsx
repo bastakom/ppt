@@ -1,3 +1,4 @@
+import { PopUpModal } from "@/components/ui/pop-up-modal";
 import { SettingsProps } from "@/components/utils/interface";
 import { useState } from "react";
 
@@ -12,6 +13,7 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
   });
 
   const [isChecked, setIsChecked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -45,6 +47,7 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
           customerType: "",
         });
         setIsChecked(false);
+        setIsModalOpen(true);
       }
     } catch {
       throw new Error("failed");
@@ -52,76 +55,79 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
   };
 
   return (
-    <form
-      className="mt-4 md:mt-10 md:w-[90%] lg:w-[50%] mx-auto"
-      onSubmit={handleSubmit}
-    >
-      <div className="grid grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="companyName"
-          id="companyName"
-          placeholder={settings.company_name}
-          value={formData.companyName}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="text"
-          name="contactPerson"
-          id="contactPerson"
-          placeholder={settings.contact_person}
-          value={formData.contactPerson}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="email"
-          id="email"
-          placeholder={settings.email}
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="number"
-          name="number"
-          id="number"
-          placeholder={settings.phone}
-          value={formData.number}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      <textarea
-        name="message"
-        id="message"
-        placeholder={settings.message}
-        className="resize-none h-32"
-        value={formData.message}
-        onChange={handleInputChange}
-      />
-
-      <div className="flex items-start gap-4">
-        <input
-          type="checkbox"
-          name=""
-          id=""
-          className="mt-2"
-          checked={isChecked}
-          onChange={handleCheckBox}
-        />
-        <div>{settings.policy_text}</div>
-      </div>
-      <button
-        className="mb-6 md:mb-0 w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
-        type="submit"
+    <>
+      {isModalOpen && <PopUpModal />}
+      <form
+        className="mt-4 md:mt-10 md:w-[90%] lg:w-[50%] mx-auto"
+        onSubmit={handleSubmit}
       >
-        {settings.button}
-      </button>
-    </form>
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="companyName"
+            id="companyName"
+            placeholder={settings.company_name}
+            value={formData.companyName}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="text"
+            name="contactPerson"
+            id="contactPerson"
+            placeholder={settings.contact_person}
+            value={formData.contactPerson}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder={settings.email}
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="number"
+            name="number"
+            id="number"
+            placeholder={settings.phone}
+            value={formData.number}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <textarea
+          name="message"
+          id="message"
+          placeholder={settings.message}
+          className="resize-none h-32"
+          value={formData.message}
+          onChange={handleInputChange}
+        />
+
+        <div className="flex items-start gap-4">
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            className="mt-2"
+            checked={isChecked}
+            onChange={handleCheckBox}
+          />
+          <div>{settings.policy_text}</div>
+        </div>
+        <button
+          className="mb-6 md:mb-0 w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
+          type="submit"
+        >
+          {settings.button}
+        </button>
+      </form>
+    </>
   );
 };
