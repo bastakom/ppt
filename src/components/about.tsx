@@ -13,10 +13,10 @@ interface AboutProps {
     citat: React.ReactNode[];
     citat_person: string;
   };
-
+  lang: any;
   settings: Settings;
 }
-export const About = ({ blok, settings }: AboutProps) => {
+export const About = ({ blok, settings, lang }: AboutProps) => {
   const {
     Heading,
     content,
@@ -26,7 +26,7 @@ export const About = ({ blok, settings }: AboutProps) => {
     no_spacing,
     citat_person,
   } = blok;
-
+  console.log(lang);
   return (
     <div
       className={`
@@ -51,7 +51,7 @@ export const About = ({ blok, settings }: AboutProps) => {
         </div>
       </div>
 
-      {form && <TravelReqForm settings={settings} />}
+      {form && <TravelReqForm settings={settings} lang={lang} />}
     </div>
   );
 };

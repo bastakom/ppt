@@ -153,7 +153,7 @@ export const Filter = ({ blok, resor, settings, lang }: FilterProps) => {
             className="flex justify-center mb-20 lg:mb-0 lg:mt-4"
             key={uuidv4()}
           >
-            <StandardForm settings={settings} />
+            <StandardForm settings={settings} lang={lang} />
           </div>
         );
       })}

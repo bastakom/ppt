@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export const PopUpModal = () => {
+export const PopUpModal = ({ lang }: any) => {
+  console.log(lang);
   const [close, setClose] = useState(false);
 
   const handleClick = () => {
@@ -20,7 +21,14 @@ export const PopUpModal = () => {
     >
       <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] lg:w-[45%] lg:h-[40vh] flex flex-col gap-8">
         <div className="flex justify-between items-center">
-          <h3 className="text-xl font-semibold">Meddelandet har skickats</h3>
+          <h3 className="text-xl font-semibold">
+            {" "}
+            {lang === "en"
+              ? "The message has been sent."
+              : lang === "da"
+              ? "Beskeden er sendt"
+              : "Meddelandet har skickats"}
+          </h3>
           <button
             type="button"
             className="text-gray-400 text-2xl"
@@ -31,7 +39,12 @@ export const PopUpModal = () => {
         </div>
 
         <p className="mt-4 text-lg">
-          Tack för ditt meddelande! Vi återkommer till dig så snart som möjligt.
+          {lang === "en"
+            ? "Thank you for your message! We will get back to you as soon as possible."
+            : lang ===
+              "Tak for din besked! Vi vender tilbage til dig hurtigst muligt."
+            ? "Beskeden er sendt"
+            : "Tack för ditt meddelande! Vi återkommer till dig så snart som möjligt."}
         </p>
 
         <div className="flex justify-end mt-4">
@@ -40,7 +53,7 @@ export const PopUpModal = () => {
             className="bg-blue-700 text-white px-4 py-2 rounded"
             onClick={handleClick}
           >
-            Stäng
+            {lang === "en" ? "Close" : lang === "da" ? "Tæt" : "Stäng"}
           </button>
         </div>
       </div>

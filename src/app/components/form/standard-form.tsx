@@ -2,7 +2,7 @@ import { PopUpModal } from "@/components/ui/pop-up-modal";
 import { SettingsProps } from "@/components/utils/interface";
 import { useState } from "react";
 
-export const StandardForm = ({ settings }: SettingsProps) => {
+export const StandardForm = ({ settings, lang }: SettingsProps) => {
   const [formData, setFormData] = useState({
     name: "",
     number: "",
@@ -62,7 +62,7 @@ export const StandardForm = ({ settings }: SettingsProps) => {
 
   return (
     <>
-      {isModalOpen && <PopUpModal />}
+      {isModalOpen && <PopUpModal lang={lang} />}
 
       <div className="md:w-[90%] lg:w-[55%] p-4">
         {settings && (
