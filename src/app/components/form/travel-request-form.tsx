@@ -2,7 +2,7 @@ import { PopUpModal } from "@/components/ui/pop-up-modal";
 import { SettingsProps } from "@/components/utils/interface";
 import { useState } from "react";
 
-export const TravelReqForm = ({ settings }: SettingsProps) => {
+export const TravelReqForm = ({ settings, lang }: SettingsProps) => {
   const [formData, setFormData] = useState({
     companyName: "",
     contactPerson: "",
@@ -56,7 +56,7 @@ export const TravelReqForm = ({ settings }: SettingsProps) => {
 
   return (
     <>
-      {isModalOpen && <PopUpModal />}
+      {isModalOpen && <PopUpModal lang={lang} />}
       <form
         className="mt-4 md:mt-10 md:w-[90%] lg:w-[50%] mx-auto"
         onSubmit={handleSubmit}

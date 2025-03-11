@@ -2,7 +2,7 @@ import useStore from "@/components/lib/store";
 import { PopUpModal } from "@/components/ui/pop-up-modal";
 import { useState } from "react";
 
-export const BookingForm = ({ settings }: any) => {
+export const BookingForm = ({ settings, lang }: any) => {
   const { openCalender } = useStore();
   const [formData, setFormData] = useState({
     name: "",
@@ -103,7 +103,7 @@ export const BookingForm = ({ settings }: any) => {
   } = settings;
   return (
     <>
-      {isModalOpen && <PopUpModal />}
+      {isModalOpen && <PopUpModal lang={lang} />}
 
       <form onSubmit={handleSubmit}>
         <h2>{title}</h2>

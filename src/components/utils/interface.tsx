@@ -17,6 +17,7 @@ export interface Settings {
 
 export interface SettingsProps {
   settings: Settings;
+  lang?: any;
 }
 
 export interface ImageProps {
