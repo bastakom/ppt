@@ -30,7 +30,7 @@ const HeaderSection = ({ props, lang }: HeaderProps) => {
 
   return (
     <nav className="flex  items-center bg-white border-gray-200 px-4">
-      <div className="grid grid-cols-3 flex-nowrap lg:flex  items-center justify-between pb-4 pt-4 lg:pt-0 mx-auto gap-10 lg:py-4 justify-self-end justify-items-center md:w-[100%]">
+      <div className="grid grid-cols-3 flex-nowrap lg:flex  items-center justify-between pb-4 pt-4 lg:pt-4 mx-auto gap-10 lg:py-4 justify-self-end justify-items-center md:w-[100%]">
         {/* Hamburgermeny-knapp */}
         <button
           data-collapse-toggle="navbar-search"

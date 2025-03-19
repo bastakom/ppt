@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 async function fetchData(slug: string) {
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     language: process.env.STORYBLOCK_LANG,
   };
 

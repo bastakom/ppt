@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export const PopUpModal = ({ lang }: any) => {
-  console.log(lang);
   const [close, setClose] = useState(false);
 
   const handleClick = () => {

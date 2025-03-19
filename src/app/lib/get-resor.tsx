@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 export async function getResor(slug: string) {
   const lang = process.env.STORYBLOCK_LANG;
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     language: lang,
   };
 

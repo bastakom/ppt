@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 export async function getAllResor() {
   const language = process.env.STORYBLOCK_LANG;
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     language: language,
     starts_with: "resor-och-paket",
   };
