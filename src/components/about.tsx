@@ -26,7 +26,7 @@ export const About = ({ blok, settings, lang }: AboutProps) => {
     no_spacing,
     citat_person,
   } = blok;
-  console.log(lang);
+
   return (
     <div
       className={`

@@ -3,7 +3,7 @@ import { getStoryblokApi } from "@storyblok/react";
 export async function getData() {
   const lang = process.env.STORYBLOCK_LANG;
   let sbParams = {
-    version: "draft" as const,
+    version: "published" as const,
     language: lang,
   };
 
