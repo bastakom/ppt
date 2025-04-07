@@ -80,6 +80,7 @@ export const BookingForm = ({ settings, lang }: any) => {
     gender,
     message,
     business,
+    people_1,
     people_2,
     people_4,
     people_8,
@@ -186,6 +187,7 @@ export const BookingForm = ({ settings, lang }: any) => {
             <option value="" disabled>
               {select_number_of_people}
             </option>
+            <option value="1">{people_1}</option>
             <option value="2">{people_2}</option>
             <option value="4">{people_4}</option>
             <option value="8">{people_8}</option>
